@@ -1,10 +1,16 @@
 /* 1. Базове скидання відступів (щоб сайт прилягав до країв екрана) */
-* 
-    body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background-color: #121212; /* Темний фон для всього сайту */
     color: #ffffff; /* Загальний колір тексту - білий */
     font-family: sans-serif;
 }
+
 /* --- СЕКЦІЯ HERO --- */
 .hero {
     padding: 80px 0; /* Відступи зверху і знизу, щоб дихало */
@@ -27,108 +33,92 @@
 
 .hero__profession {
     font-size: 32px;
-    color: #a855f7; /* Фіолетовий акцентний колір (як у Figma) */
+    color: #a855f7; /* Фіолетовий акцентний колір */
     margin-bottom: 20px;
 }
 
 .hero__description {
     font-size: 16px;
-    color: #aaaaaa; /* Робимо опис трохи тьмянішим (сірим) */
+    color: #aaaaaa; /* Робимо опис трохи тьмянішим */
     margin-bottom: 40px;
     line-height: 1.5;
 }
 
 /* --- СТИЛІ КНОПКИ --- */
 .btn {
-    display: inline-block;
+    display: inline-block !important;
     background-color: #a855f7; /* Фіолетовий фон */
     color: #ffffff;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 15px 35px !important;
     border-radius: 5px; /* Закруглені кути */
     font-weight: bold;
-    transition: background-color 1.0s ease; /* Плавна зміна кольору при наведенні */
+    transition: background-color 0.3s ease; /* Плавна зміна кольору */
+    width: max-content !important; /* Кнопка не буде розтягуватися */
+    text-align: center !important;
 }
 
 .btn:hover {
-    background-color: #a684c5; /* Темніший фіолетовий при наведенні мишки */
+    background-color: #a684c5; /* Темніший фіолетовий при наведенні */
 }
 
-/* --- ЗАГЛУШКА ДЛЯ ФОТО --- */
-/* --- НОВІ СТИЛІ ДЛЯ РЕАЛЬНОГО ФОТО --- */
+/* --- СТИЛІ ДЛЯ РЕАЛЬНОГО ФОТО --- */
 .hero__photo {
     width: 380px; /* Задаємо фіксовану ширину */
-    height: 380px; /* Задаємо таку ж фіксовану висоту (робимо квадрат) */
-    border-radius: 50%; /* Це магічний рядок, який робить квадрат кругом */
-    object-fit: cover; /* Це ДУЖЕ важливо: фотографія автоматично обріжеться, щоб заповнити круг, не розтягуючись і не сплющуючись */
-    border: 8px solid #a855f7; /* Додаємо фіолетову рамку, як у макеті (за бажанням) */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Додаємо легку тінь для ефекту об'єму */
+    height: 380px; /* Задаємо таку ж фіксовану висоту */
+    border-radius: 50%; /* Робить квадрат кругом */
+    object-fit: cover; /* Фото автоматично обріжеться, не розтягуючись */
+    border: 8px solid #a855f7; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); 
 }
 
 /* 2. Стилі для шапки сайту */
 .header {
-    background-color: #2c2929; /* Робимо темний фон (перевір точний колір у Figma) */
-    padding: 20px 0; /* Відступи зверху і знизу */
+    background-color: #2c2929; /* Темний фон */
+    padding: 20px 0; 
 }
 
-/* 3. Контейнер, щоб контент не розтягувався на весь екран */
+/* 3. Контейнер, щоб контент не розтягувався */
 .container {
     max-width: 1200px;
-    margin: 0 auto; /* Центруємо контейнер */
-    display: flex; /* Робимо елементи гнучкими */
-    justify-content: space-between; /* Розкидаємо логотип і меню по краях */
-    align-items: center; /* Вирівнюємо по вертикалі */
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
     padding: 0 20px;
 }
 
 /* 4. Стилі для списку меню */
 .nav__list {
-    display: flex; /* Вибудовуємо пункти меню в один горизонтальний рядок */
-    list-style: none; /* Прибираємо чорні крапки */
-    gap: 30px; /* Робимо відстань між пунктами меню */
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
 }
 
 /* 5. Стилі для самих посилань (тексту) */
 .nav__link, .logo {
-    text-decoration: none; /* Прибираємо стандартне синє підкреслення */
-    color: #ffffff; /* Робимо текст білим */
-    font-family: sans-serif; /* Ставимо рівний шрифт без засічок */
+    text-decoration: none; 
+    color: #ffffff; 
+    font-family: sans-serif; 
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
+
 /* ========================================= */
-/* ВИПРАВЛЕННЯ ДЛЯ КОМП'ЮТЕРА (ПК)           */
+/* ВИПРАВЛЕННЯ БАГІВ ДЛЯ КОМП'ЮТЕРА (ПК)     */
 /* ========================================= */
 
-/* 1. Ховаємо мобільне бургер-меню (три смужки) на великих екранах */
+/* Примусово ховаємо гігантську іконку меню в шапці на великих екранах */
 @media (min-width: 769px) {
-    /* Додаємо найпопулярніші класи меню. Один із них точно твій. */
+    .header svg,
+    .header img:not(.logo),
     .burger, 
     .burger-menu, 
-    .menu-icon, 
-    .mobile-btn, 
-    #menu-btn,
-    .navbar-toggler {
+    .menu-icon,
+    #menu-btn {
         display: none !important;
     }
-}
-
-/* 2. Фіксимо кнопку "Повернутися на головну" (щоб не розтягувалась) */
-.btn, 
-.back-btn, 
-a.btn {
-    display: inline-block !important;
-    padding: 15px 35px !important;
-    width: max-content !important; /* Розмір кнопки буде лише по довжині тексту */
-    text-align: center !important;
-    margin: 30px auto !important;  /* Відступи і центрування */
-    box-sizing: border-box !important;
-}
-
-/* Якщо кнопка лежить у контейнері, центруємо сам контейнер */
-div[style*="text-align: center"] a.btn {
-    display: inline-block !important;
 }

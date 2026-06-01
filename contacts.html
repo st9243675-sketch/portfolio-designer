@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Анатолій</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Базові стилі для темного фону */
+        body {
+            background-color: #0b0b0b; 
+            color: #ffffff;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Головний контейнер */
+        .contact-page__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* ЗАГОЛОВКИ */
+        .contact-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .contact-subtitle {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #a855f7; /* Фіолетовий колір з макету */
+            margin: 0 0 20px 0;
+        }
+
+        .contact-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* СІТКА КОНТАКТІВ (Ліва і Права колонки) */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* ============================ */
+        /* ЛІВА ЧАСТИНА: ФОРМА          */
+        /* ============================ */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            background-color: #d9d9d9; /* Світло-сірий фон полів */
+            border: none;
+            color: #333333;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            padding: 18px 25px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .form-input {
+            border-radius: 40px; /* Округлі поля вводу */
+        }
+
+        .form-textarea {
+            border-radius: 20px;
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        .form-input::placeholder, .form-textarea::placeholder {
+            color: #777777;
+        }
+
+        .btn-submit-wrap {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn-submit {
+            background-color: #a855f7;
+            color: #ffffff;
+            border: none;
+            padding: 12px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #9333ea;
+        }
+
+        /* ============================ */
+        /* ПРАВА ЧАСТИНА: ДЕТАЛІ        */
+        /* ============================ */
+        .contact-details {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .details-title {
+            font-size: 32px;
+            color: #a855f7;
+            font-weight: 600;
+            margin-bottom: 40px;
+            margin-top: 0;
+        }
+
+        .detail-item {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .detail-item strong {
+            font-size: 18px;
+        }
+
+        .detail-item span {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* Адаптивність для телефонів */
+        @media (max-width: 900px) {
+            .contact-content {
+                grid-template-columns: 1fr; /* Одна колонка на телефоні */
+                gap: 50px;
+            }
+            .contact-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="contact-page">
+        <div class="contact-page__container">
+            
+            <div class="contact-header">
+                <p class="contact-subtitle">Зв'язатися зі мною</p>
+                <h1 class="contact-title">Давайте створимо щось разом</h1>
+                <p class="contact-desc">Зв'яжіться з нами легко! Натисніть кнопку «Зв'язатися зі мною», щоб зв'язатися з нами та обговорити, як ми можемо перетворити ваш цифровий досвід на незабутні подорожі.</p>
+            </div>
+            
+            <div class="contact-content">
+                
+                <form class="contact-form" action="#" method="Відправити">
+                    <input type="text" class="form-input" placeholder="Напишіть Ваше Ім'я тут" required>
+                    <input type="email" class="form-input" placeholder="Напишіть ваш Email тут" required>
+                    <textarea class="form-textarea" placeholder="Напишіть ваше повідомлення тут..." required></textarea>
+                    
+                    <div class="btn-submit-wrap">
+                        <button type="submit" class="btn-submit">Відправити</button>
+                    </div>
+                </form>
+
+                <div class="contact-details">
+                    <h2 class="details-title">Персональні дані</h2>
+                    
+                    <div class="detail-item">
+                        <strong>Phone:</strong>
+                        <span>+92 302 786004</span>
+                        <span>+92 302 780007</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Email:</strong>
+                        <span>Hammadmasood038@Gmail.Com</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Address:</strong>
+                        <span>House 188, Street No 1, New Sattelite Town<br>Sargodha</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; width: 100%; margin-top: 80px;">
+                <a href="#" onclick="window.close(); return false;" class="btn">Повернутися на головну</a>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>

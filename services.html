@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мої послуги - Анатолій</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Загальні налаштування темного фону сторінки */
+        body {
+            background-color: #0b0b0b; 
+            color: #ffffff;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Центрування та відступи для всього контенту */
+        .services-page__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        /* Заголовки сторінки */
+        .services-page__subtitle {
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .services-page__title {
+            font-size: 46px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        /* Акуратна сітка 2x2 */
+        .services-page__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px; 
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        /* Адаптивність під мобільні екрани */
+        @media (max-width: 900px) {
+            .services-page__grid {
+                grid-template-columns: 1fr;
+            }
+            .services-page__title {
+                font-size: 36px;
+            }
+        }
+
+        /* Стиль картки */
+        .service-card {
+            border-radius: 24px; 
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Обгортка для п'ятикутника та іконки всередині */
+        .service-icon-wrap {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        /* Головний п'ятикутник */
+        .pentagon-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke-width: 1.8;
+        }
+
+        /* Внутрішня іконка, що накладається зверху */
+        .inner-icon-svg {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Текстові стилі елементів картки */
+        .service-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .service-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* ========================================= */
+        /* СТИЛІЗАЦІЯ ТЕМ ДЛЯ КАРТОК (ЗГІДНО МАКЕТУ) */
+        /* ========================================= */
+
+        /* 1. Звичайні картки (Світлі) */
+        .service-card.normal {
+            background-color: #f9f9f9; 
+        }
+        .normal .pentagon-svg {
+            stroke: #a855f7; /* Фіолетовий п'ятикутник */
+        }
+        .normal .inner-icon-svg {
+            stroke: #a855f7; /* Фіолетова іконка всередині */
+        }
+        .normal .service-title {
+            color: #a855f7; 
+        }
+        .normal .service-desc {
+            color: #4a4a4a; 
+        }
+
+        /* 2. Активна картка (Фіолетова UI UX Design) */
+        .service-card.highlight {
+            background-color: #a855f7; 
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+        }
+        .highlight .pentagon-svg {
+            stroke: #ffffff; /* Білий п'ятикутник */
+        }
+        .highlight .inner-icon-svg {
+            stroke: #ffffff; /* Біла іконка всередині */
+        }
+        .highlight .service-title {
+            color: #ffffff; 
+        }
+        .highlight .service-desc {
+            color: #ffffff; 
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="services-page">
+        <div class="services-page__container">
+            <p class="services-page__subtitle">Мої послуги</p>
+            <h1 class="services-page__title">Послуги які я надаю</h1>
+            
+            <div class="services-page__grid">
+                
+                <div class="service-card normal">
+                    <div class="service-icon-wrap">
+                        <svg class="pentagon-svg" viewBox="0 0 100 100">
+                            <polygon points="50,4 96,38 80,94 20,94 4,38"/>
+                        </svg>
+                        <svg class="inner-icon-svg" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="12" rx="2" />
+                            <path d="M9 15v3H7v2h10v-2h-2v-3" />
+                            <path d="M6 10c2-3 4-3 6 0s4 3 6 0" />
+                            <path d="M14 5l4-4 1 1-4 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Graphic Design</h3>
+                    <p class="service-desc">Я — кваліфікований графічний дизайнер, який пропонує креативні рішення, що захоплюють аудиторію. Маю гостру увагу до деталей та пристрасть до візуального розповіді історій.,</p>
+                </div>
+
+                <div class="service-card highlight">
+                    <div class="service-icon-wrap">
+                        <svg class="pentagon-svg" viewBox="0 0 100 100">
+                            <polygon points="50,4 96,38 80,94 20,94 4,38"/>
+                        </svg>
+                        <svg class="inner-icon-svg" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="13" rx="2" />
+                            <path d="M9 16v3H7v1h10v-1h-2v-3" />
+                            <rect x="5" y="6" width="14" height="6" rx="1" />
+                            <circle cx="6" cy="14" r="0.5" fill="currentColor" />
+                            <circle cx="12" cy="14" r="0.5" fill="currentColor" />
+                            <circle cx="18" cy="14" r="0.5" fill="currentColor" />
+                            <path d="M7 8h2M11 8h6M7 10h4" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">UI UX Design</h3>
+                    <p class="service-desc">Я — кваліфікований UI/UX дизайнер, який пропонує креативні рішення, що захоплюють аудиторію. Маю гостру увагу до деталей та пристрасть до створення інтуїтивно зрозумілих та візуально привабливих інтерфейсів.</p>
+                </div>
+
+                <div class="service-card normal">
+                    <div class="service-icon-wrap">
+                        <svg class="pentagon-svg" viewBox="0 0 100 100">
+                            <polygon points="50,4 96,38 80,94 20,94 4,38"/>
+                        </svg>
+                        <svg class="inner-icon-svg" viewBox="0 0 24 24">
+                            <rect x="6" y="2" width="12" height="20" rx="3" />
+                            <path d="M12 18h.01" stroke-width="2"/>
+                            <path d="M16 5l-7 7M8 13l-1 2 2-1 1-1z" />
+                            <path d="M15 4l2 2" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Web Design</h3>
+                    <p class="service-desc">Як талановитий веб-дизайнер, я спеціалізуюся на створенні візуально приголомшливих та зручних веб-сайтів. З акцентом як на естетику, так і на функціональність.</p>
+                </div>
+
+                <div class="service-card normal">
+                    <div class="service-icon-wrap">
+                        <svg class="pentagon-svg" viewBox="0 0 100 100">
+                            <polygon points="50,4 96,38 80,94 20,94 4,38"/>
+                        </svg>
+                        <svg class="inner-icon-svg" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="12" rx="2" />
+                            <path d="M9 15v3H7v2h10v-2h-2v-3" />
+                            <path d="M6 6h5v5H6zM14 6h4M14 9h4M6 13h12" stroke-width="1.2" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">App Design</h3>
+                    <p class="service-desc">Я досвідчений дизайнер додатків, що спеціалізується на створенні стильного та зручного мобільних додатків..</p>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; width: 100%; margin-top: 50px;">
+                <a href="#" onclick="window.close(); return false;" class="btn">Повернутися на головну</a>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>

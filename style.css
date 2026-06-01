@@ -1,0 +1,101 @@
+/* 1. Базове скидання відступів (щоб сайт прилягав до країв екрана) */
+* 
+    body {
+    background-color: #121212; /* Темний фон для всього сайту */
+    color: #ffffff; /* Загальний колір тексту - білий */
+    font-family: sans-serif;
+}
+/* --- СЕКЦІЯ HERO --- */
+.hero {
+    padding: 80px 0; /* Відступи зверху і знизу, щоб дихало */
+}
+
+.hero__content {
+    max-width: 500px; /* Обмежуємо ширину тексту, щоб він не був на весь екран */
+}
+
+.hero__subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.hero__title {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero__profession {
+    font-size: 32px;
+    color: #a855f7; /* Фіолетовий акцентний колір (як у Figma) */
+    margin-bottom: 20px;
+}
+
+.hero__description {
+    font-size: 16px;
+    color: #aaaaaa; /* Робимо опис трохи тьмянішим (сірим) */
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* --- СТИЛІ КНОПКИ --- */
+.btn {
+    display: inline-block;
+    background-color: #a855f7; /* Фіолетовий фон */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px; /* Закруглені кути */
+    font-weight: bold;
+    transition: background-color 1.0s ease; /* Плавна зміна кольору при наведенні */
+}
+
+.btn:hover {
+    background-color: #a684c5; /* Темніший фіолетовий при наведенні мишки */
+}
+
+/* --- ЗАГЛУШКА ДЛЯ ФОТО --- */
+/* --- НОВІ СТИЛІ ДЛЯ РЕАЛЬНОГО ФОТО --- */
+.hero__photo {
+    width: 380px; /* Задаємо фіксовану ширину */
+    height: 380px; /* Задаємо таку ж фіксовану висоту (робимо квадрат) */
+    border-radius: 50%; /* Це магічний рядок, який робить квадрат кругом */
+    object-fit: cover; /* Це ДУЖЕ важливо: фотографія автоматично обріжеться, щоб заповнити круг, не розтягуючись і не сплющуючись */
+    border: 8px solid #a855f7; /* Додаємо фіолетову рамку, як у макеті (за бажанням) */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Додаємо легку тінь для ефекту об'єму */
+}
+
+/* 2. Стилі для шапки сайту */
+.header {
+    background-color: #2c2929; /* Робимо темний фон (перевір точний колір у Figma) */
+    padding: 20px 0; /* Відступи зверху і знизу */
+}
+
+/* 3. Контейнер, щоб контент не розтягувався на весь екран */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Центруємо контейнер */
+    display: flex; /* Робимо елементи гнучкими */
+    justify-content: space-between; /* Розкидаємо логотип і меню по краях */
+    align-items: center; /* Вирівнюємо по вертикалі */
+    padding: 0 20px;
+}
+
+/* 4. Стилі для списку меню */
+.nav__list {
+    display: flex; /* Вибудовуємо пункти меню в один горизонтальний рядок */
+    list-style: none; /* Прибираємо чорні крапки */
+    gap: 30px; /* Робимо відстань між пунктами меню */
+}
+
+/* 5. Стилі для самих посилань (тексту) */
+.nav__link, .logo {
+    text-decoration: none; /* Прибираємо стандартне синє підкреслення */
+    color: #ffffff; /* Робимо текст білим */
+    font-family: sans-serif; /* Ставимо рівний шрифт без засічок */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}

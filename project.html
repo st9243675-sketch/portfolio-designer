@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мої проєкти - Анатолій</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Базові стилі для темного фону */
+        body {
+            background-color: #0b0b0b; 
+            color: #ffffff;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Головний контейнер */
+        .projects-page__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* ВЕРХНЯ ЧАСТИНА (Заголовки та кнопка All Work) */
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            gap: 20px;
+        }
+
+        .portfolio-title-group {
+            max-width: 700px;
+        }
+
+        .portfolio-subtitle {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        .portfolio-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+            margin: 0;
+        }
+
+        /* Кнопка All Work */
+        .btn-all-work {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-all-work:hover {
+            background-color: #e0e0e0;
+        }
+
+        .btn-all-work svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        /* СІТКА ПРОЄКТІВ (3 колонки) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* Картка проєкту */
+        .project-card {
+            text-align: center;
+            text-decoration: none; /* Щоб весь блок міг бути посиланням */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Блок з картинкою проєкту */
+        .project-image-wrap {
+            background-color: #f5f5f7; /* Світлий фон як на макеті */
+            border-radius: 20px;
+            aspect-ratio: 4 / 5; /* Пропорція картинки, щоб була витягнута вертикально */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Сама картинка */
+        .project-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Заповнює весь простір без спотворень */
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image-wrap img {
+            transform: scale(1.05); /* Легке збільшення фото при наведенні */
+        }
+
+        /* Назва проєкту під картинкою */
+        .project-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* ПАГІНАЦІЯ (Крапочки внизу) */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+        .dot {
+            width: 40px;
+            height: 12px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            opacity: 0.3;
+            cursor: pointer;
+            transition: opacity 0.3s ease, background-color 0.3s ease;
+        }
+
+        .dot:hover {
+            opacity: 0.7;
+        }
+
+        .dot.active {
+            background-color: #a855f7; /* Фіолетова активна кнопка */
+            opacity: 1;
+        }
+
+        /* Адаптивність для телефонів та планшетів */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшеті */
+            }
+            .portfolio-header {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .projects-grid {
+                grid-template-columns: 1fr; /* 1 колонка на телефоні */
+            }
+            .portfolio-title {
+                font-size: 36px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="projects-page">
+        <div class="projects-page__container">
+            
+            <div class="portfolio-header">
+                <div class="portfolio-title-group">
+                    <p class="portfolio-subtitle">Портфоліо</p>
+                    <h1 class="portfolio-title">Останні проєкти</h1>
+                    <p class="portfolio-desc">Дослідіть захопливий світ передових дизайнів UI/UX, які переосмислюють цифровий досвід, демонструючи наші інноваційні рішення та надихаючі творчі подорожі.</p>
+                </div>
+                
+                <a href="#" class="btn-all-work">
+                    All Work
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="projects-grid">
+                
+                <a href="#" class="project-card">
+                    <div class="project-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=600" alt="App Design Mockup">
+                    </div>
+                    <h3 class="project-name">App Design</h3>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="project-image-wrap">
+                         <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=600" alt="Web Design Mockup">
+                    </div>
+                    <h3 class="project-name">Web Design</h3>
+                </a>
+
+                <a href="#" class="project-card">
+                    <div class="project-image-wrap">
+                         <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600" alt="UI Design Mockup">
+                    </div>
+                    <h3 class="project-name">Ui Design</h3>
+                </a>
+
+            </div>
+
+            <div class="pagination">
+                <div class="dot"></div>
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div style="text-align: center; width: 100%;">
+                <a href="#" onclick="window.close(); return false;" class="btn">Повернутися на головну</a>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>

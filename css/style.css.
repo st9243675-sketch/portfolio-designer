@@ -99,3 +99,36 @@
     font-size: 24px;
     font-weight: bold;
 }
+/* ========================================= */
+/* ВИПРАВЛЕННЯ ДЛЯ КОМП'ЮТЕРА (ПК)           */
+/* ========================================= */
+
+/* 1. Ховаємо мобільне бургер-меню (три смужки) на великих екранах */
+@media (min-width: 769px) {
+    /* Додаємо найпопулярніші класи меню. Один із них точно твій. */
+    .burger, 
+    .burger-menu, 
+    .menu-icon, 
+    .mobile-btn, 
+    #menu-btn,
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
+/* 2. Фіксимо кнопку "Повернутися на головну" (щоб не розтягувалась) */
+.btn, 
+.back-btn, 
+a.btn {
+    display: inline-block !important;
+    padding: 15px 35px !important;
+    width: max-content !important; /* Розмір кнопки буде лише по довжині тексту */
+    text-align: center !important;
+    margin: 30px auto !important;  /* Відступи і центрування */
+    box-sizing: border-box !important;
+}
+
+/* Якщо кнопка лежить у контейнері, центруємо сам контейнер */
+div[style*="text-align: center"] a.btn {
+    display: inline-block !important;
+}
